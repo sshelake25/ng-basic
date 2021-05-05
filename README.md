@@ -1,5 +1,13 @@
 # BasicAngular
 
+
+git remote add origin https://github.com/sshelake25/ng-basic.git
+git branch -M main
+git push -u origin main
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
 
 ## Development server
