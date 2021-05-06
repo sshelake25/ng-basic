@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
   }
   )
 export class AppComponent {
-  public title = 'basic-angular';
+  public title = 'We are sending input data from app.compounet to admin compout';
 
    constructor() {
     // this.title = first;

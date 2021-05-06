@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'ecard-admin',
@@ -6,10 +6,40 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
+   @Input() profile: any; // declration
 
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor() {
+    console.log(`In constructor function`);
+  }
+
+  ngOnChanges() {
+      // template liternal string
+      console.log('inside on chnages')
+    console.log(`ngOnChanges - data is ${this.profile}`);
+  }
+  ngOnInit() {
+    console.log(`ngOnInit  - data is `);
+  }
+  ngDoCheck() {
+    console.log("ngDoCheck")
+  }
+  ngAfterContentInit() {
+    console.log("ngAfterContentInit");
+  }
+  ngAfterContentChecked() {
+    console.log("ngAfterContentChecked");
+  }
+  ngAfterViewInit() {
+    console.log("ngAfterViewInit");
+  }
+  ngAfterViewChecked() {
+    console.log("ngAfterViewChecked");
+  }
+  ngOnDestroy() {
+    console.log("ngOnDestroy");
   }
 
 }
+
+
