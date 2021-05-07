@@ -1,7 +1,7 @@
 
 <span class="add-makeup">Welcome</span>
-
-<ecard-admin [profile]="title" ></ecard-admin>
+We have recived this data from child --->{{displayData | json }}
+<ecard-admin [profile]="title"   (personDetails)="getPersonDetails($event)" ></ecard-admin>
 
 <!-- <app-product-price></app-product-price>
 <app-product-card></app-product-card> -->

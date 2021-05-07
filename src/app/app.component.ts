@@ -12,9 +12,16 @@ import { Component } from '@angular/core';
   )
 export class AppComponent {
   public title = 'We are sending input data from app.compounet to admin compout';
-
+ 
+  displayData: any;
+   
    constructor() {
     // this.title = first;
+   }
+
+   getPersonDetails(valOj:any) {
+     this.displayData = valOj;
+      console.log(valOj);
    }
 
 }
