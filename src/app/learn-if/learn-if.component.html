@@ -1,0 +1,44 @@
+<p>learn-if works!</p>
+
+<div  [ngClass]="['first', 'second','three']">
+    Hey I am so happy and abc
+</div>
+
+<ul>
+    <li *ngFor="let myperson of people">
+        <h2>
+
+            <span 
+            [ngStyle]="{'background-color':getColor(myperson.country)}"> 
+            ({{myperson.country }})  my name is {{myperson.name}}
+            </span>
+
+            <span *ngIf="myperson.age <= 35">
+                am so young and age is {{myperson.age}}
+            </span>
+
+            <span *ngIf="myperson.age > 35">
+                age is {{myperson.age}} (old)
+            </span>
+        </h2>
+        <img src="./assets/paymenttype.png">
+    </li>
+</ul>
+
+
+
+<h4>NgSwitch</h4>
+<ul *ngFor="let person of people" [ngSwitch]="person.country">
+    <li *ngSwitchCase="'uk'" class="text-success">
+        E {{ person.name }} ({{ person.country }})
+    </li>
+    <li *ngSwitchCase="'us'" class="text-primary">
+        $ {{ person.name }} ({{ person.country }})
+    </li>
+    <li *ngSwitchCase="'hk'" class="text-danger">
+        Y {{ person.name }} ({{ person.country }})
+    </li>
+    <li *ngSwitchDefault class="text-warning">
+        R {{ person.name }} ({{ person.country }})
+    </li>
+</ul>
