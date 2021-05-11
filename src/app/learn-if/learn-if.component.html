@@ -1,5 +1,11 @@
 <p>learn-if works!</p>
 
+<h4> We are usong pipe {{amount | myWish:'GoodDay'}} </h4>
+
+<h3>{{birthDay | date:'fullDate' | lowercase }}</h3>
+
+<h2>{{ amount | currency:'EUR':'Euros ' }}</h2>
+
 <div  [ngClass]="['first', 'second','three']">
     Hey I am so happy and abc
 </div>

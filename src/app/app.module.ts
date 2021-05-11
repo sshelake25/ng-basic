@@ -9,6 +9,7 @@ import { ProductDescComponent } from './product-desc/product-desc.component';
 import { ProductTagComponent } from './product-tag/product-tag.component';
 import { AdminComponent } from './admin/admin.component';
 import { LearnIfComponent } from './learn-if/learn-if.component';
+import { TranformedWishPipe } from './tranformed-wish.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LearnIfComponent } from './learn-if/learn-if.component';
     ProductDescComponent,
     ProductTagComponent,
     AdminComponent,
-    LearnIfComponent
+    LearnIfComponent,
+    TranformedWishPipe
   ],
   imports: [
     BrowserModule,
