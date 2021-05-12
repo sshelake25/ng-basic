@@ -10,6 +10,7 @@ import { ProductTagComponent } from './product-tag/product-tag.component';
 import { AdminComponent } from './admin/admin.component';
 import { LearnIfComponent } from './learn-if/learn-if.component';
 import { TranformedWishPipe } from './tranformed-wish.pipe';
+import { AdminModule } from './admin.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TranformedWishPipe } from './tranformed-wish.pipe';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
