@@ -10,7 +10,7 @@ export class LearnIfComponent implements OnInit {
   birthDay = new Date(1988, 3, 15);
 
   amount = 500;
-
+  price = 600;
   people = [
     { name: 'joha', age: 20, country: 'ind' },
     { name: 'foo', age: 35, country: 'uk' },
