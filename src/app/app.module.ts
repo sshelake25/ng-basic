@@ -11,6 +11,8 @@ import { AdminComponent } from './admin/admin.component';
 import { LearnIfComponent } from './learn-if/learn-if.component';
 import { TranformedWishPipe } from './tranformed-wish.pipe';
 import { AdminModule } from './admin.module';
+import { ReactiveformBasicComponent } from './reactiveform-basic/reactiveform-basic.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { AdminModule } from './admin.module';
     ProductTagComponent,
     AdminComponent,
     LearnIfComponent,
-    TranformedWishPipe
+    TranformedWishPipe,
+    ReactiveformBasicComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AdminModule
+    AdminModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,31 @@
+@import"~bootstrap/dist/css/bootstrap.css";
+
+.form-title{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: rgb(182, 83, 190);
+}
+.container {
+    background-color: #c6e2e9;
+  }
+  input{
+      margin:5px;
+  }
+.form-output-header{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 50px;
+    color: crimson;
+    margin-bottom: 10px;
+}
+.form-ouput{
+    text-align: center;
+    font-size: 30px;
+}
+.inputbox{
+    display: block;
+    margin:auto;
+   
+}
+  

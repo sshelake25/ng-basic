@@ -1,0 +1,72 @@
+<p>reactiveform-basic works!</p>
+<!-- <p>reg-form works!</p>
+<label>
+    name: <input type="text" [formControl]="name">
+</label>
+<p>Value : {{name.value}}</p> -->
+
+<div class="container">
+    <h2 class="form-title">Registration Form using Reactive Form</h2>
+    <form novalidate [formGroup]="profileForm">
+        <div class="row">
+            <div class="form-group col">
+                <label>First Name</label>
+                <input type="text" class="form-control inputbox" formControlName="firstName">
+            </div>
+            <div class="form-group col">
+                <label>Last Name</label>
+                <input type="text" class="form-control inputbox" formControlName="lastName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control inputbox" formControlName="email">
+        </div>
+        <div class="form-group">
+            <label for="lang">Language</label>
+            <select name="language" id="language" class="form-control inputbox">
+                <option [value]="lang" *ngFor="let lang of language">{{lang}}</option>
+            </select>
+        </div>
+        <div formGroupName="address">
+            <!--  nested form -->
+            <h3>Address</h3>
+            <div class="row">
+                <div class="form-group col">
+                    <label>Street</label>
+                    <input type="text" class="form-control inputbox" formControlName="street">
+                </div>
+                <div class="form-group col">
+                    <label>City</label>
+                    <input type="text" class="form-control inputbox" formControlName="city">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label>State</label>
+                    <input type="text" class="form-control inputbox" formControlName="state">
+                </div>
+                <div class="form-group col">
+                    <label>zip</label>
+                    <input type="text" class="form-control inputbox" formControlName="zip">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Genders</label>
+            <input type="radio" formControlName="gender" value="Female">
+            <label>Female</label>
+            <input type="radio" formControlName="gender" value="Male">
+            <label>Male</label>
+            <input type="radio" formControlName="gender" value="Other">
+            <label>Other</label>
+        </div>
+        <br />
+        <button class="btn btn-primary" (click)="submitForm()">Submit</button>
+    </form>
+</div>
+
+<div class="form-output-header">Form values</div>
+<div class="form-ouput">
+    <pre>{{profileForm.value | json}}</pre>
+</div>
