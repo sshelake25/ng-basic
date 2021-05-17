@@ -11,7 +11,11 @@ import { AdminComponent } from './admin/admin.component';
 import { LearnIfComponent } from './learn-if/learn-if.component';
 import { TranformedWishPipe } from './tranformed-wish.pipe';
 import { AdminModule } from './admin.module';
+
 import { ReactiveformBasicComponent } from './reactiveform-basic/reactiveform-basic.component';
+
+import { ReactiveFomrsComponent } from './reactive-fomrs/reactive-fomrs.component';
+
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -24,7 +28,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AdminComponent,
     LearnIfComponent,
     TranformedWishPipe,
-    ReactiveformBasicComponent
+    ReactiveformBasicComponent,
+    ReactiveFomrsComponent
   ],
   imports: [
     BrowserModule,
