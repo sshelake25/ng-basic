@@ -17,6 +17,11 @@ import { ReactiveformBasicComponent } from './reactiveform-basic/reactiveform-ba
 import { ReactiveFomrsComponent } from './reactive-fomrs/reactive-fomrs.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule} from '@angular/forms';
+
+
+import { TemplateDrivanFormComponent } from './template-drivan-form/template-drivan-form.component';
+import { PersonService } from './person.service';
 
 @NgModule({
   declarations: [
@@ -29,15 +34,17 @@ import { ReactiveFormsModule } from '@angular/forms';
     LearnIfComponent,
     TranformedWishPipe,
     ReactiveformBasicComponent,
-    ReactiveFomrsComponent
+    ReactiveFomrsComponent,
+    TemplateDrivanFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AdminModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [PersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

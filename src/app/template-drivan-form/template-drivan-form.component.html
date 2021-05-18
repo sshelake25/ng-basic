@@ -1,0 +1,43 @@
+<p>template-drivan-form works!</p>
+<div class="template">
+    <pre>{{myContactForm.value | json}}</pre>
+
+    <form novalidate #myContactForm="ngForm">
+        <!-- //.ts contactFrom = new formGroup( {}) -->
+        <fieldset>
+            <div class="form-group">
+                <label>First Name</label>
+
+                <input type="text" class="form-control" [(ngModel)]="contatcForm.fname" name="fname" >
+
+                <!-- <pre>Valid? {{myContactForm.form.controls.fname?.valid}}</pre>
+                <pre>Dirty? {{myContactForm.form.controls.fname?.dirty}}</pre>
+                <pre>Touched? {{myContactForm.form.controls.fname?.touched}}</pre> -->
+
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" [(ngModel)]="contatcForm.lname" name="lname">
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" [(ngModel)]="contatcForm.email" name="email">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Language</label>
+            <select class="form-control">
+                <option value="">Please select a language</option>
+                <option *ngFor="let lang of langs" [value]="lang">
+                    {{lang}}
+                </option>
+            </select>
+        </div>
+
+        <button (click)="SubmitForm()">Submit </button>
+    </form>
+</div>

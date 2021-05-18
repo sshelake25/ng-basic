@@ -7,11 +7,28 @@
 
 <div class="container">
     <h2 class="form-title">Registration Form using Reactive Form</h2>
+    {{profileForm.value | json}}
     <form novalidate [formGroup]="profileForm">
         <div class="row">
             <div class="form-group col">
                 <label>First Name</label>
+                <pre>Dirty? {{ profileForm.controls.firstName.dirty }}</pre>
+                <pre>pristine? {{ profileForm.controls.firstName.pristine }}</pre>
+                <pre>Touched? {{ profileForm.controls.firstName.touched }}</pre>
+
+                <pre>unTouched? {{ profileForm.controls.firstName.untouched }}</pre>
+
+                <pre>Valid? {{profileForm.controls.firstName.valid }}</pre>
+
+                <pre>inValid? {{profileForm.controls.firstName.invalid }}</pre>
+
                 <input type="text" class="form-control inputbox" formControlName="firstName">
+                <p *ngIf="profileForm.controls.firstName.touched && profileForm.controls.firstName.invalid">
+                    *Pleasae enter valid value
+                </p>
+                <div [hidden]="profileForm.controls.firstName.valid || profileForm.controls.firstName.pristine" class="alert alert-danger">
+                    Name is required
+                </div>
             </div>
             <div class="form-group col">
                 <label>Last Name</label>
@@ -24,7 +41,7 @@
         </div>
         <div class="form-group">
             <label for="lang">Language</label>
-            <select name="language" id="language" class="form-control inputbox">
+            <select name="language" formControlName="language" id="language" class="form-control inputbox">
                 <option [value]="lang" *ngFor="let lang of language">{{lang}}</option>
             </select>
         </div>
