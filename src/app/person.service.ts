@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Injectable, NgModule } from '@angular/core';
 
 
@@ -10,9 +11,17 @@ import { Component, Injectable, NgModule } from '@angular/core';
 @Injectable()
 export class PersonService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  getPersonDetailsFromApi() {
+    let configUrl = 'assets/person.json';
+    return this.http.get(configUrl);
+  }
 
   getPersonDetaills() {
+
+    //this.http.post('https://flickar.com/api/updateuseer',{user:'1'})
+
     return {
       name: 'abcd',
       adress: 'BAN',
@@ -28,7 +37,7 @@ export class PersonService {
     return 'BAN';
   }
 
-  getPersonImage(){
+  getPersonImage() {
     return 'https://angular.io/assets/images/logos/angular/logo-nav@2x.png';
   }
 

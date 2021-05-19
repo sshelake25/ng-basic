@@ -20,7 +20,18 @@ export class ProductDescComponent implements OnInit {
   ngOnInit(): void {
     this.data = this._personService.getPersonDetaills();
     this.imageUrl = this._personService.getPersonImage();
-     
+
+
+    this._personService.getPersonDetailsFromApi()
+      .subscribe(
+        (success) => {
+          console.log(success)
+        },
+        (error) => {
+          console.log(error)
+        },
+        () => console.log("observable complete")
+      );
 
   }
 
