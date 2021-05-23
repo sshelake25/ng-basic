@@ -3,14 +3,10 @@ import { Component, Injectable, NgModule } from '@angular/core';
 
 
 
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-
 @Injectable()
 export class PersonService {
-
+  //CRUD / create read update delete
+  // post get put/patch delete
   constructor(private http: HttpClient) { }
 
   getPersonDetailsFromApi() {
@@ -22,11 +18,13 @@ export class PersonService {
 
     //this.http.post('https://flickar.com/api/updateuseer',{user:'1'})
 
-    return {
+    let data =  {
       name: 'abcd',
       adress: 'BAN',
       phoneNo: 90909090909
-    }
+    };
+
+    return data;
   }
 
   getPersonAge() {
