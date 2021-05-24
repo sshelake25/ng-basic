@@ -19,9 +19,10 @@ import { ReactiveFomrsComponent } from './reactive-fomrs/reactive-fomrs.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import {FormsModule} from '@angular/forms';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TemplateDrivanFormComponent } from './template-drivan-form/template-drivan-form.component';
 import { PersonService } from './person.service';
+import { HeaderInterceptorService } from './header-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,10 @@ import { PersonService } from './person.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [PersonService],
+  providers: [
+    PersonService,
+    { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptorService, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
