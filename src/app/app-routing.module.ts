@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
+import { AutheticationGaurdService } from './authetication-gaurd.service';
 import { LearnIfComponent } from './learn-if/learn-if.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductDescComponent } from './product-desc/product-desc.component';
@@ -9,11 +10,15 @@ import { ReactiveformBasicComponent } from './reactiveform-basic/reactiveform-ba
 
 const routes: Routes = [
   { path: '', component: ProductCardComponent },
-  { path: 'product-list', component: LearnIfComponent },
+  {
+    path: 'product-list',
+    component: LearnIfComponent,
+    canActivate: [AutheticationGaurdService]
+  },
   { path: 'person', component: AdminComponent },
   { path: 'find', redirectTo: 'search' },
   { path: 'search', component: ReactiveformBasicComponent },
-  { path:'product-desc', component:ProductDescComponent},
+  { path: 'product-desc', component: ProductDescComponent },
   { path: '**', component: ProductPriceComponent }
 ];
 
